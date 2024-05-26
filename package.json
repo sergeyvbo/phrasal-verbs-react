@@ -2,6 +2,7 @@
   "name": "phrasal-verbs-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/phrasal-verbs",
   "dependencies": {
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "13.4.0",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm-run-all build copy-files",
+    "copy-files": "scp -r build/* sergeivbo@45.11.26.172:/var/www/html/phrasal-verbs-react/"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5"
   }
 }
